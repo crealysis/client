@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crealysis Limited - AI-Powered Creative Content</title>
+    <meta name="description" content="Transform your creative vision with AI-generated content. Crealysis Limited provides cutting-edge AI solutions for designers, marketers, and creative professionals.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.5;
+            color: #161616;
+            background: #ffffff;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1584px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Header - IBM Style */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            z-index: 1000;
+            height: 80px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 600;
+            color: #161616;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #161616;
+            font-size: 16px;
+            font-weight: 400;
+            transition: color 0.2s ease;
+            padding: 12px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: #0066cc;
+            border-bottom-color: #0066cc;
+        }
+
+        .cta-button {
+            background: #0066cc;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #0043a6;
+        }
+
+        /* Hero Section - IBM Style */
+        .hero {
+            padding: 160px 0 80px;
+            background: #f4f4f4;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 72px;
+            font-weight: 300;
+            margin-bottom: 32px;
+            color: #161616;
+            line-height: 1.125;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-text .highlight {
+            font-weight: 600;
+            color: #0066cc;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            margin-bottom: 48px;
+            color: #525252;
+            line-height: 1.5;
+            max-width: 480px;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .hero-stat {
+            text-align: left;
+        }
+
+        .hero-stat-number {
+            font-size: 48px;
+            font-weight: 300;
+            color: #0066cc;
+            line-height: 1.125;
+        }
+
+        .hero-stat-label {
+            font-size: 14px;
+            color: #525252;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-visual {
+            background: #ffffff;
+            padding: 48px;
+            border: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .hero-card {
+            background: #f4f4f4;
+            padding: 24px;
+            border-left: 4px solid #0066cc;
+        }
+
+        .hero-card h3 {
+            font-size: 18px;
+            font-weight: 500;
+            color: #161616;
+            margin-bottom: 8px;
+        }
+
+        .hero-card p {
+            font-size: 14px;
+            color: #525252;
+        }
+
+        /* Services Section - IBM Style */
+        .services {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .section-header {
+            max-width: 640px;
+            margin-bottom: 64px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 24px;
+            color: #161616;
+            line-height: 1.125;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #525252;
+            line-height: 1.5;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            padding: 48px;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .service-card:hover {
+            border-color: #0066cc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: transparent;
+            transition: background 0.2s ease;
+        }
+
+        .service-card:hover::before {
+            background: #0066cc;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            color: #161616;
+        }
+
+        .service-card p {
+            color: #525252;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        .service-link {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .service-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: #f4f4f4;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            padding: 24px 0;
+            border-bottom: 1px solid #e0e0e0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .features-list li:hover {
+            background: rgba(0, 102, 204, 0.05);
+            padding-left: 16px;
+        }
+
+        .features-list li h3 {
+            font-size: 20px;
+            font-weight: 500;
+            color: #161616;
+            margin-bottom: 8px;
+        }
+
+        .features-list li p {
+            font-size: 14px;
+            color: #525252;
+        }
+
+        .features-visual {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #525252;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: #161616;
+            color: #ffffff;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 32px;
+            line-height: 1.125;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            margin-bottom: 24px;
+            color: #c6c6c6;
+            line-height: 1.5;
+        }
+
+        .about-link {
+            color: #4589ff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .about-link:hover {
+            text-decoration: underline;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 48px;
+        }
+
+        .about-stat {
+            text-align: left;
+        }
+
+        .about-stat-number {
+            font-size: 64px;
+            font-weight: 200;
+            color: #4589ff;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .about-stat-label {
+            font-size: 16px;
+            color: #c6c6c6;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .contact-info h2 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 32px;
+            color: #161616;
+            line-height: 1.125;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            margin-bottom: 32px;
+            color: #525252;
+            line-height: 1.5;
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            margin-bottom: 16px;
+            font-size: 16px;
+            color: #525252;
+        }
+
+        .contact-form {
+            background: #f4f4f4;
+            padding: 48px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #161616;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid #8d8d8d;
+            background: #ffffff;
+            color: #161616;
+            font-size: 16px;
+            font-family: inherit;
+            transition: border-color 0.2s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #0066cc;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: #161616;
+            color: #c6c6c6;
+            padding: 48px 0;
+            border-top: 1px solid #393939;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 48px;
+            margin-bottom: 32px;
+        }
+
+        .footer-section h3 {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section a {
+            color: #c6c6c6;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-section a:hover {
+            color: #4589ff;
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid #393939;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1056px) {
+            .container {
+                padding: 0 24px;
+            }
+
+            .hero-content,
+            .about-content,
+            .contact-content,
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .hero-text h1 {
+                font-size: 48px;
+            }
+
+            .section-title,
+            .about-text h2,
+            .contact-info h2 {
+                font-size: 36px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 672px) {
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Crealysis</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Solutions</a></li>
+                <li><a href="#features">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Get started</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>AI-powered <span class="highlight">creative solutions</span> for modern enterprises</h1>
+                        <p>Transform your creative operations with enterprise-grade AI tools designed for scale, security, and performance. From content generation to creative automation, Crealysis delivers measurable business impact.</p>
+                        <a href="#services" class="cta-button">Explore solutions</a>
+                        
+                        <div class="hero-stats">
+                            <div class="hero-stat">
+                                <div class="hero-stat-number">90%</div>
+                                <div class="hero-stat-label">Cost reduction</div>
+                            </div>
+                            <div class="hero-stat">
+                                <div class="hero-stat-number">10x</div>
+                                <div class="hero-stat-label">Faster delivery</div>
+                            </div>
+                            <!-- <div class="hero-stat">
+                                <div class="hero-stat-number">500+</div>
+                                <div class="hero-stat-label">Enterprise clients</div>
+                            </div> -->
+                        </div>
+                    </div>
+                    
+                    <div class="hero-visual">
+                        <div class="hero-card">
+                            <h3>Visual Content Generation</h3>
+                            <p>Create professional-grade visuals, illustrations, and designs with enterprise AI models optimized for brand consistency.</p>
+                        </div>
+                        <div class="hero-card">
+                            <h3>Intelligent Content Creation</h3>
+                            <p>Generate compelling copy, marketing materials, and documentation that aligns with your brand voice and business objectives.</p>
+                        </div>
+                        <div class="hero-card">
+                            <h3>Creative Automation</h3>
+                            <p>Streamline creative workflows with AI-powered automation tools that integrate seamlessly with existing enterprise systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Enterprise AI solutions built for creative teams</h2>
+                    <p class="section-subtitle">Comprehensive AI-powered tools and services designed to enhance creative productivity while maintaining enterprise security and compliance standards.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Visual AI Platform</h3>
+                        <p>Generate high-quality visual content including images, graphics, and video assets with AI models trained specifically for business applications. Maintain brand consistency across all creative outputs.</p>
+                        <a href="#" class="service-link">Learn more →</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3>Content Intelligence Suite</h3>
+                        <p>AI-powered copywriting and content creation tools that understand your brand voice, audience, and business objectives. Generate marketing copy, documentation, and communications at scale.</p>
+                        <a href="#" class="service-link">Learn more →</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3>Creative Workflow Automation</h3>
+                        <p>Streamline creative processes with intelligent automation. From asset management to approval workflows, reduce manual tasks and accelerate time-to-market.</p>
+                        <a href="#" class="service-link">Learn more →</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h3>Enterprise Integration Services</h3>
+                        <p>Seamlessly integrate AI creative tools with your existing technology stack. APIs, SDKs, and custom solutions for enterprise-grade deployment and management.</p>
+                        <a href="#" class="service-link">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="features-content">
+                        <h2 class="section-title">Key capabilities</h2>
+                        <ul class="features-list">
+                            <li>
+                                <h3>Enterprise Security</h3>
+                                <p>SOC 2 Type II compliant with enterprise-grade security controls and data protection standards.</p>
+                            </li>
+                            <li>
+                                <h3>Scalable Infrastructure</h3>
+                                <p>Cloud-native architecture designed to handle enterprise workloads with 99.9% uptime SLA.</p>
+                            </li>
+                            <li>
+                                <h3>Custom Model Training</h3>
+                                <p>Train AI models on your specific brand assets, style guides, and creative requirements.</p>
+                            </li>
+                            <li>
+                                <h3>API-First Integration</h3>
+                                <p>Comprehensive APIs and SDKs for seamless integration with existing creative tools and workflows.</p>
+                            </li>
+                            <li>
+                                <h3>Advanced Analytics</h3>
+                                <p>Detailed insights into creative performance, usage patterns, and ROI measurement.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="features-visual">
+                        <p>Interactive product demonstration available upon request</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Pioneering enterprise AI for creative industries</h2>
+                        <p>Crealysis Limited combines cutting-edge artificial intelligence research with deep understanding of enterprise creative operations. Our solutions are trusted by Fortune 500 companies to transform their creative processes.</p>
+                        <p>Founded by AI researchers and creative industry veterans, we've built proprietary models and platforms specifically designed for business-critical creative applications.</p>
+                        <a href="#" class="about-link">Read our story →</a>
+                    </div>
+                    
+                    <div class="about-stats">
+                        <!-- <div class="about-stat">
+                            <div class="about-stat-number">500+</div>
+                            <div class="about-stat-label">Enterprise clients worldwide</div>
+                        </div> -->
+                        <!-- <div class="about-stat">
+                            <div class="about-stat-number">10M+</div>
+                            <div class="about-stat-label">AI-generated assets delivered</div>
+                        </div> -->
+                        <div class="about-stat">
+                            <div class="about-stat-number">99.9%</div>
+                            <div class="about-stat-label">Platform uptime SLA</div>
+                        </div>
+                        <!-- <div class="about-stat">
+                            <div class="about-stat-number">24/7</div>
+                            <div class="about-stat-label">Enterprise support</div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Ready to transform your creative operations?</h2>
+                        <p>Connect with our enterprise solutions team to discuss how AI can enhance your creative workflows and drive measurable business impact.</p>
+                        
+                        <!-- <ul class="contact-details">
+                            <li><strong>Enterprise Sales:</strong> +1 (555) 123-4567</li>
+                            <li><strong>Technical Support:</strong> support@crealysis.org</li>
+                            <li><strong>Partnership Inquiries:</strong> partners@crealysis.org</li>
+                            <li><strong>Media & Press:</strong> press@crealysis.org</li>
+                        </ul> -->
+                    </div>
+                    
+                    <div class="contact-form">
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Full name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Business email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company">Company *</label>
+                                <input type="text" id="company" name="company" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="title">Job title</label>
+                                <input type="text" id="title" name="title">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">How can we help? *</label>
+                                <textarea id="message" name="message" required placeholder="Tell us about your creative challenges and objectives..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="cta-button">Submit inquiry</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Solutions</h3>
+                    <ul>
+                        <li><a href="#">Visual AI Platform</a></li>
+                        <li><a href="#">Content Intelligence</a></li>
+                        <li><a href="#">Workflow Automation</a></li>
+                        <li><a href="#">Enterprise Integration</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">SDK Downloads</a></li>
+                        <li><a href="#">Model Training</a></li>
+                        <li><a href="#">Analytics Dashboard</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Leadership</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">News</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                        <li><a href="#">System Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Crealysis Limited. All rights reserved. | Privacy Policy | Terms of Service | Security</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry. Our enterprise solutions team will contact you within 24 hours.');
+            this.reset();
+        });
+
+        // Features list interaction
+        document.querySelectorAll('.features-list li').forEach(item => {
+            item.addEventListener('click', function() {
+                // Remove active class from all items
+                document.querySelectorAll('.features-list li').forEach(li => li.classList.remove('active'));
+                // Add active class to clicked item
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
